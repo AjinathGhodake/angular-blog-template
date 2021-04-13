@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { NavbarComponent } from './navbar/navbar.component';
 import { MastheadComponent } from './masthead/masthead.component';
 import { FooterComponent } from './footer/footer.component';
+import { LoadingComponent } from './loading/loading.component';
 
 
 
@@ -10,11 +11,12 @@ import { FooterComponent } from './footer/footer.component';
   declarations: [
     NavbarComponent,
     MastheadComponent,
-    FooterComponent
+    FooterComponent,
+    LoadingComponent
   ],
   imports: [
     CommonModule
   ],
-  exports:[NavbarComponent,MastheadComponent,FooterComponent]
+  exports:[NavbarComponent,MastheadComponent,FooterComponent,LoadingComponent]
 })
 export class UiComponentModule { }
