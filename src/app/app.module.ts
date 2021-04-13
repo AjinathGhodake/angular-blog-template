@@ -7,11 +7,19 @@ import { UiComponentModule } from './ui-component/ui-component.module';
 import { HomeComponent } from './home/home.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PreviewPostsComponent } from './preview-posts/preview-posts.component';
+import { PastPostComponent } from './past-post/past-post.component';
+import { AboutComponent } from './about/about.component';
+import { ContactComponent } from './contact/contact.component';
+import { ViewPostComponent } from './view-post/view-post.component';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    PreviewPostsComponent
+    PreviewPostsComponent,
+    PastPostComponent,
+    AboutComponent,
+    ContactComponent,
+    ViewPostComponent
   ],
   imports: [
     BrowserModule,

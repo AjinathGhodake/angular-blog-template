@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-import { Observable,throwError } from 'rxjs';
-import { environment } from 'src/environments/environment';
-const API_URL = environment.api.base;
+import { Observable, throwError } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { map, catchError ,} from "rxjs/operators";
+import { map, catchError } from 'rxjs/operators';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class ApiService {
   constructor(private http: HttpClient) {}
@@ -15,7 +13,7 @@ export class ApiService {
     return this.http
       .get(endpoint)
       .pipe(
-        map((response:any) => {
+        map((response: any) => {
           return response;
         })
       )
@@ -23,20 +21,16 @@ export class ApiService {
   }
 
   public Post(endpoint: string, data: any): Observable<any> {
-    return this.http
-      .post(API_URL + endpoint, data)
-      .pipe(catchError(this.handleError));
+    return this.http.post(endpoint, data).pipe(catchError(this.handleError));
   }
 
-  public Delete(endpoint: string) {
-    return this.http
-      .delete(API_URL + endpoint)
-      .pipe(catchError(this.handleError));
-  }
+  // public Delete(endpoint: string) {
+  //   return this.http.delete(endpoint).pipe(catchError(this.handleError));
+  // }
 
   //handle any error encounted while sending http request
   private handleError(error: Response | any) {
-    console.error("ApiService::handleError", error);
+    console.error('ApiService::handleError', error);
     return throwError(error);
   }
 }

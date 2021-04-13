@@ -4,6 +4,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { MastheadComponent } from './masthead/masthead.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoadingComponent } from './loading/loading.component';
+import { RouterModule } from '@angular/router';
 
 
 
@@ -15,7 +16,8 @@ import { LoadingComponent } from './loading/loading.component';
     LoadingComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
   ],
   exports:[NavbarComponent,MastheadComponent,FooterComponent,LoadingComponent]
 })
